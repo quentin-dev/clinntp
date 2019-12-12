@@ -1,4 +1,4 @@
-export async function textArrayToString (textArray) {
+export function textArrayToString (textArray) {
   var text = ''
 
   textArray.forEach(elt => (text += elt + '\n'))
