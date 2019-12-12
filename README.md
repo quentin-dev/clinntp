@@ -1,5 +1,7 @@
 # clinntp
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a97b217d935d488a9fbf346afd2ceece)](https://www.codacy.com/manual/quentin-dev/clinntp?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=quentin-dev/clinntp&amp;utm_campaign=Badge_Grade)
+
 ## What it is
 
 *clinntp* is a cli nntp news reader written using node.js. It can be configured
