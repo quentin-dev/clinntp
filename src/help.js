@@ -1,7 +1,7 @@
-import chalk from 'chalk';
+import chalk from 'chalk'
 
 const menus = {
-    help:`
+  help: `
 ${chalk.greenBright('clinntp [options]')}
 
     ${chalk.blueBright('-l, --limit')} ${chalk.redBright('<news limit>')}
@@ -25,6 +25,6 @@ ${chalk.greenBright('clinntp [options]')}
 `
 }
 
-export function help() {
-    console.log(menus.help);
+export function help () {
+  console.log(menus.help)
 }
