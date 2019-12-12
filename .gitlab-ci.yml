@@ -1,0 +1,10 @@
+image: node:stretch-slim
+
+stages:
+    - prepublish
+
+codeclimate:
+    stage: prepublish
+    script:
+        - npm install
+        - npm run lint
