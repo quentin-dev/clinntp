@@ -21,7 +21,7 @@ ${chalk.greenBright('clinntp [options]')}
         ${chalk.blackBright('Default:')} Set to ${chalk.yellowBright('\'*\'')}
 
     ${chalk.blueBright('-H, --help')}
-        Prints clinews help menu with options info
+        Prints clinntp help menu with options info
 `
 }
 
