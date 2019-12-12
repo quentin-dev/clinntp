@@ -16,5 +16,6 @@
         "sourceType": "module"
     },
     "rules": {
+        "no-global-assign": ["error", {"exceptions": ["require"]}]
     }
 }

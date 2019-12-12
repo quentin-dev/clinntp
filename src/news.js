@@ -33,7 +33,7 @@ export async function news (client, limit, newsgroups) {
     }
   ])
 
-  const messageID = parseInt(details.group.articleNumbers.reverse().slice(0, occurences)[subjects.indexOf(chosenNews.chosenNews)])
+  const messageID = parseInt(details.group.articleNumbers.reverse().slice(0, occurences)[subjects.indexOf(chosenNews.chosenNews)], 10)
   const body = await client.body(messageID)
   const bodytxt = await textArrayToString(body.article.body)
   console.log(bodytxt)

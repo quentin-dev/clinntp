@@ -24,7 +24,7 @@
     "mocha": "^6.2.2"
   },
   "scripts": {
-    "lint": "eslint src/ test/",
+    "lint": "eslint bin/ src/ test/",
     "test": "mocha -r esm"
   },
   "repository": {
