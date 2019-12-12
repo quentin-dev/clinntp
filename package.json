@@ -1,0 +1,22 @@
+{
+  "name": "clinntp",
+  "version": "0.0.2",
+  "description": "A cli nntp newsr eader",
+  "main": "index.js",
+  "bin": {
+    "clinntp": "./bin/index.js"
+  },
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "esm": "^3.2.25",
+    "inquirer": "^7.0.0",
+    "minimist": "^1.2.0",
+    "newsie": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sunbro",
+  "license": "ISC"
+}
