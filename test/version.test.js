@@ -13,7 +13,6 @@ describe('#version()', function () {
   it('console.log called once', function () {
     version()
     assert.equal(console.log.calledOnce, true)
-    // assert.equal(console.log.getCall(0).args[0].includes(vnum.toString()), true)
   })
 
   it('console.log prints vnum in purle', function () {

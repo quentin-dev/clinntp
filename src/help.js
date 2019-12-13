@@ -1,8 +1,10 @@
 import chalk from 'chalk'
 
+import { name } from '../package.json'
+
 const menus = {
   help: `
-${chalk.greenBright('clinntp [options]')}
+${chalk.greenBright(name + ' [options]')}
 
     ${chalk.blueBright('-l, --limit')} ${chalk.redBright('<news limit>')}
         Limit the number of news you load when choosing a newsgroup.
@@ -21,10 +23,10 @@ ${chalk.greenBright('clinntp [options]')}
         ${chalk.blackBright('Default:')} Set to ${chalk.yellowBright('\'*\'')}
 
     ${chalk.blueBright('-H, --help')}
-        Prints clinntp help menu with options info
+        Prints ${name} help menu with options info
 
     ${chalk.blueBright('-v, --version')}
-        Prints clinntp version number
+        Prints ${name} version number
 `
 }
 
