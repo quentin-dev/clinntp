@@ -1,6 +1,7 @@
 image: node:stretch-slim
 
 stages:
+    - setup
     - prepublish
     - publish
 
@@ -9,7 +10,7 @@ cache:
         - node_modules/
 
 install:
-    stage: prepublish
+    stage: setup
     script:
         - npm install
 
