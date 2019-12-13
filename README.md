@@ -38,6 +38,9 @@ using its options but does not currently support saving the current configuratio
 * `-H, --help`
   * Prints clinntp help menu with options info
 
+* `-v, --version`
+  * Prints clinntp version number
+
 ## Planned improvements
 
 * [ ] Add option to save current configuration as default

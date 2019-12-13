@@ -22,6 +22,9 @@ ${chalk.greenBright('clinntp [options]')}
 
     ${chalk.blueBright('-H, --help')}
         Prints clinntp help menu with options info
+
+    ${chalk.blueBright('-v, --version')}
+        Prints clinntp version number
 `
 }
 
