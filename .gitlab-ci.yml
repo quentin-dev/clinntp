@@ -2,6 +2,7 @@ image: node:stretch-slim
 
 stages:
     - prepublish
+    - publish
 
 codeclimate:
     stage: prepublish
@@ -10,3 +11,13 @@ codeclimate:
         - npm run lint
         - npm run test
         - npm run covupload
+
+upload:
+    stage: publish
+    dependencies:
+        - codeclimate
+    only:
+        - tags
+    script:
+        - echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}'>.npmrc
+        - npm publish
