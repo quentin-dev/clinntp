@@ -8,7 +8,7 @@
 ## What it is
 
 *clinntp* is a cli nntp news reader written using node.js. It can be configured
-using its options but does not currently support saving the current configuration.
+using its options and supports saving the current configuration.
 
 ## Requirements
 * node
