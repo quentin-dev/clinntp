@@ -1,6 +1,6 @@
 {
   "name": "clinntp",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "A cli nntp news reader",
   "main": "index.js",
   "bin": {
