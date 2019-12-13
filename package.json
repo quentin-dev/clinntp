@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "codecov": "^3.6.1",
     "eslint": "^6.7.2",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-import": "^2.19.1",
@@ -23,11 +24,14 @@
     "eslint-plugin-standard": "^4.0.1",
     "mocha": "^6.2.2",
     "mocha-sinon": "^2.1.0",
+    "nyc": "^14.1.1",
     "sinon": "^7.5.0"
   },
   "scripts": {
     "lint": "eslint bin/ src/ test/",
-    "test": "mocha -r esm"
+    "test": "mocha -r esm",
+    "coverage": "nyc --all -- mocha -r esm",
+    "covupload": "nyc --all --reporter lcovonly -- mocha -r esm"
   },
   "repository": {
     "type": "git",
