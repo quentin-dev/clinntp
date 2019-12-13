@@ -4,12 +4,34 @@ stages:
     - prepublish
     - publish
 
-codeclimate:
+cache:
+    paths:
+        - node_modules/
+
+codeclimate:install:
     stage: prepublish
     script:
         - npm install
+
+codeclimate:lint:
+    stage: prepublish
+    dependencies:
+        - codeclimate:install
+    script:
         - npm run lint
+
+codeclimate:lint:
+    stage: prepublish
+    dependencies:
+        - codeclimate:install
+    script:
         - npm run test
+
+codeclimate:lint:
+    stage: prepublish
+    dependencies:
+        - codeclimate:install
+    script:
         - npm run covupload
 
 upload:
