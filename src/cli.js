@@ -1,18 +1,45 @@
 import minimist from 'minimist'
 import Client from 'newsie'
+import Conf from 'conf'
 
 import { news } from './news'
 import { version } from './version'
 import { help } from './help'
 import { save } from './save'
+import { configure } from './configure'
+import { clear } from './clear'
+
+import { name } from '../package.json'
 
 export async function cli (argsArray) {
+  const config = new Conf()
+
+  var currentConfig = configure(config, name)
+
   const args = minimist(argsArray.slice(2), {
     int: ['limit', 'port'],
     string: ['host', 'newsgroups'],
-    boolean: ['help', 'save', 'version'],
-    alias: { l: 'limit', h: 'host', p: 'port', H: 'help', n: 'newsgroups', s: 'save', v: 'version' },
-    default: { limit: -1, host: 'news.epita.fr', port: 119, help: false, newsgroups: '*', save: false, version: false },
+    boolean: ['help', 'save', 'version', 'clear'],
+    alias: {
+      l: 'limit',
+      h: 'host',
+      p: 'port',
+      H: 'help',
+      n: 'newsgroups',
+      s: 'save',
+      v: 'version',
+      c: 'clear'
+    },
+    default: {
+      limit: currentConfig.limit,
+      host: currentConfig.host,
+      port: currentConfig.port,
+      help: false,
+      newsgroups: currentConfig.newsgroups,
+      save: false,
+      version: false,
+      clear: false
+    },
     stopEarly: true,
     unknown: () => {
       console.log('Unknown option was used!')
@@ -30,8 +57,8 @@ export async function cli (argsArray) {
     process.exit(0)
   }
 
-  if (args.save) {
-    save()
+  if (args.clear) {
+    clear(config)
     process.exit(0)
   }
 
@@ -45,5 +72,10 @@ export async function cli (argsArray) {
   await news(client, args.limit, args.newsgroups)
 
   await client.quit()
+
+  if (args.save) {
+    save(config, name, args)
+  }
+
   process.exit(0)
 }

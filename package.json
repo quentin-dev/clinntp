@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "chalk": "^3.0.0",
+    "conf": "^6.2.0",
     "esm": "^3.2.25",
     "inquirer": "^7.0.0",
     "minimist": "^1.2.0",
@@ -29,6 +30,7 @@
   },
   "scripts": {
     "lint": "eslint bin/ src/ test/",
+    "lintfix": "eslint bin/ src/ test/ --fix",
     "test": "mocha -r esm",
     "coverage": "nyc --all -- mocha -r esm",
     "covupload": "nyc --all --reporter lcovonly -- mocha -r esm && codecov"

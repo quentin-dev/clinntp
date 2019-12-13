@@ -27,6 +27,12 @@ ${chalk.greenBright(name + ' [options]')}
 
     ${chalk.blueBright('-v, --version')}
         Prints ${name} version number
+
+    ${chalk.blueBright('-s, --save')}
+        Saves the current settings as defaults
+
+    ${chalk.blueBright('-c, --clear')}
+        Resets the settings to initial default
 `
 }
 

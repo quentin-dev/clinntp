@@ -1,6 +1,9 @@
 # clinntp
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a97b217d935d488a9fbf346afd2ceece)](https://www.codacy.com/manual/quentin-dev/clinntp?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=quentin-dev/clinntp&amp;utm_campaign=Badge_Grade)
+## Badges
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a97b217d935d488a9fbf346afd2ceece)](https://www.codacy.com/manual/quentin-dev/clinntp?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=quentin-dev/clinntp&amp;utm_campaign=Badge_Grade) [![codecov](https://codecov.io/gh/quentin-dev/clinntp/branch/master/graph/badge.svg)](https://codecov.io/gh/quentin-dev/clinntp)
+
 
 ## What it is
 
@@ -18,7 +21,6 @@ using its options but does not currently support saving the current configuratio
 `clinntp [options]`
 
 ### Options
-
 * `-l, --limit <news limit>`
   * Limit the number of news you load when choosing a newsgroup
   * *Default:* Loads **all** of the news in the selected newsgroup
@@ -40,6 +42,19 @@ using its options but does not currently support saving the current configuratio
 
 * `-v, --version`
   * Prints clinntp version number
+
+* `-s, --save`
+  * Saves the current settings as defaults
+
+* `-c, --clear`
+  * Resets the settings to initial default
+
+## Examples
+
+### Saving the number of news to load
+```bash
+clinntp -l 4 -s
+```
 
 ## Planned improvements
 

@@ -43,8 +43,13 @@ describe('#help()', function () {
     assert.equal(console.log.getCall(0).args[0].includes('-v, --version'), true)
   })
 
-  it('stdout does not contain -s, --save', function () {
+  it('stdout contains -s, --save', function () {
     help()
-    assert.equal(console.log.getCall(0).args[0].includes('-s, --save'), false)
+    assert.equal(console.log.getCall(0).args[0].includes('-s, --save'), true)
+  })
+
+  it('stdout contains -c, --clear', function () {
+    help()
+    assert.equal(console.log.getCall(0).args[0].includes('-c, --clear'), true)
   })
 })
