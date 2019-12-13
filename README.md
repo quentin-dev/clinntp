@@ -33,7 +33,7 @@ using its options and supports saving the current configuration.
   * *Default*: Set to **'news.epita.fr'**
 
 * `-n, --newsgroup <match regex>`
-  * Sets the regex to use when looking up newsgroup
+  * Sets the regex to use when looking up newsgroups
   * *Default:* Set to **'*'**
 
 * `-H, --help`
