@@ -15,7 +15,7 @@ describe('#version()', function () {
     assert.equal(console.log.calledOnce, true)
   })
 
-  it('console.log prints vnum in purle', function () {
+  it('console.log prints vnum in purple', function () {
     version()
     assert.equal(console.log.calledWith(`${chalk.magentaBright(vnum)}`), true)
   })
