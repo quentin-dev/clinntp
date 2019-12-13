@@ -8,7 +8,7 @@ cache:
     paths:
         - node_modules/
 
-codeclimate:install:
+install:
     stage: prepublish
     script:
         - npm install
@@ -16,21 +16,21 @@ codeclimate:install:
 codeclimate:lint:
     stage: prepublish
     dependencies:
-        - codeclimate:install
+        - install
     script:
         - npm run lint
 
 codeclimate:lint:
     stage: prepublish
     dependencies:
-        - codeclimate:install
+        - install
     script:
         - npm run test
 
 codeclimate:lint:
     stage: prepublish
     dependencies:
-        - codeclimate:install
+        - install
     script:
         - npm run covupload
 
