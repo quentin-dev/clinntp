@@ -21,14 +21,14 @@ codeclimate:lint:
     script:
         - npm run lint
 
-codeclimate:lint:
+codeclimate:test:
     stage: prepublish
     dependencies:
         - install
     script:
         - npm run test
 
-codeclimate:lint:
+codeclimate:covupload:
     stage: prepublish
     dependencies:
         - install
@@ -37,8 +37,6 @@ codeclimate:lint:
 
 upload:
     stage: publish
-    dependencies:
-        - codeclimate
     only:
         - tags
     script:
