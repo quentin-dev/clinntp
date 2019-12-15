@@ -48,6 +48,16 @@ using its options and supports saving the current configuration.
 * `-c, --clear`
   * Resets the settings to initial default
 
+### Option priority
+If multiple boolean options, help, version, save, or clear, are set the precedence is as follows:
+
+1) version: `-v, --version`
+2) help: `-H, --help`
+3) clear: `-c, --clear`
+4) save: `-s, --save`
+
+This means that if the `-v` and `-H` options are set at the same time, clinntp will apply the version option and quit as version's priority is higher than help's.
+
 ## Examples
 
 ### Saving the number of news to load
