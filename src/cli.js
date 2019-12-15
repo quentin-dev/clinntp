@@ -16,6 +16,8 @@ export async function cli (argsArray) {
 
   var currentConfig = configure(config, name)
 
+  var unknown = false
+
   const args = minimist(argsArray.slice(2), {
     int: ['limit', 'port'],
     string: ['host', 'newsgroups'],
@@ -43,23 +45,27 @@ export async function cli (argsArray) {
     stopEarly: true,
     unknown: () => {
       console.log('Unknown option was used!')
-      process.exit(1)
+      unknown = true
     }
   })
 
+  if (unknown) {
+    return 1
+  }
+
   if (args.version) {
     version()
-    process.exit(0)
+    return 0
   }
 
   if (args.help) {
     help()
-    process.exit(0)
+    return 0
   }
 
   if (args.clear) {
     clear(config)
-    process.exit(0)
+    return 0
   }
 
   const client = new Client({
@@ -77,5 +83,5 @@ export async function cli (argsArray) {
     save(config, name, args)
   }
 
-  process.exit(0)
+  return 0
 }

@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 
 require = require('esm')(module)
-require('../src/cli').cli(process.argv)
+require('../src/main').main(process.argv)

@@ -2,7 +2,7 @@
   "name": "clinntp",
   "version": "0.0.10",
   "description": "A cli nntp news reader",
-  "main": "index.js",
+  "main": "./bin/index.js",
   "bin": {
     "clinntp": "./bin/index.js"
   },
