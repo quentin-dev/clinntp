@@ -57,7 +57,7 @@ clinntp -l 4 -s
 
 ## Planned improvements
 
-* [ ] Add option to save current configuration as default
+* [X] Add option to save current configuration as default
 * [ ] Add advanced menu navigation using keyboard
 * [ ] Implement a better selection interface
 
