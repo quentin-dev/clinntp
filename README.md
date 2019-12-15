@@ -49,7 +49,7 @@ using its options and supports saving the current configuration.
   * Resets the settings to initial default
 
 ### Option priority
-If multiple boolean options, help, version, save, or clear, are set the precedence is as follows:
+If multiple boolean options are set the precedence is as follows:
 
 1) version: `-v, --version`
 2) help: `-H, --help`
