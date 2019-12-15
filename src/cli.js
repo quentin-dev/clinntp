@@ -12,7 +12,7 @@ import { clear } from './clear'
 import { name } from '../package.json'
 
 export async function cli (argsArray) {
-  const config = new Conf()
+  const config = new Conf({ projectName: name })
 
   var currentConfig = configure(config, name)
 
