@@ -10,7 +10,7 @@ describe('#clear()', function () {
     config.clear()
   })
 
-  it('clear() clears current config', function () {
+  it('clears current config', function () {
     const config = new Conf()
     config.set(name, { limit: -1, port: 119, host: 'news.epita.fr', newsgroups: '*' })
     assert.notEqual(config.get(name), undefined)
