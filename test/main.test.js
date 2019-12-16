@@ -9,11 +9,11 @@ describe('#main()', function () {
   })
 
   it('return 0 if correct args', async function () {
-    const argsArray = ['', '', '--dryrun']
+    const argsArray = ['', '', '--help']
     expect(await main(argsArray)).to.equal(0)
   })
 
-  it('return 1 if correct args', async function () {
+  it('return 1 if wrong args', async function () {
     const argsArray = ['', '', '--dryran']
     expect(await main(argsArray)).to.equal(1)
   })
