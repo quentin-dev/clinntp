@@ -4,6 +4,7 @@ import 'mocha-sinon'
 import { cli } from '../src/cli'
 
 describe('#cli()', function () {
+  this.timeout(5000)
   this.beforeEach(function () {
     this.sinon.stub(console, 'log')
   })
