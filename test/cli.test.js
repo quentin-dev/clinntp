@@ -4,7 +4,7 @@ import 'mocha-sinon'
 import { cli } from '../src/cli'
 
 describe('#cli()', function () {
-  this.timeout(5000)
+  this.timeout(3500)
   this.beforeEach(function () {
     this.sinon.stub(console, 'log')
   })
@@ -51,6 +51,16 @@ describe('#cli()', function () {
 
   it('exit 0 if short dryrun option', async function () {
     const argsArray = ['', '', '-d']
+    expect(await cli(argsArray)).to.equal(0)
+  })
+
+  it('exit 0 if long save option', async function () {
+    const argsArray = ['', '', '--save', '-d']
+    expect(await cli(argsArray)).to.equal(0)
+  })
+
+  it('exit 0 if short save option', async function () {
+    const argsArray = ['', '', '-s', '-d']
     expect(await cli(argsArray)).to.equal(0)
   })
 })
