@@ -42,4 +42,14 @@ describe('#cli()', function () {
     const argsArray = ['', '', '-c']
     expect(await cli(argsArray)).to.equal(0)
   })
+
+  it('exit 0 if long dryrun option', async function () {
+    const argsArray = ['', '', '--dryrun']
+    expect(await cli(argsArray)).to.equal(0)
+  })
+
+  it('exit 0 if short dryrun option', async function () {
+    const argsArray = ['', '', '-d']
+    expect(await cli(argsArray)).to.equal(0)
+  })
 })

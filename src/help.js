@@ -33,6 +33,9 @@ ${chalk.greenBright(name + ' [options]')}
 
     ${chalk.blueBright('-c, --clear')}
         Resets the settings to initial default
+
+    ${chalk.blueBright('-d, --dryrun')}
+        Tries to connect with the current or specified settings without fetching the news
 `
 }
 

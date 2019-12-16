@@ -52,4 +52,9 @@ describe('#help()', function () {
     help()
     assert.equal(console.log.getCall(0).args[0].includes('-c, --clear'), true)
   })
+
+  it('stdout contains -d, --dryrun', function () {
+    help()
+    assert.equal(console.log.getCall(0).args[0].includes('-d, --dryrun'), true)
+  })
 })

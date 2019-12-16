@@ -48,6 +48,9 @@ using its options and supports saving the current configuration.
 * `-c, --clear`
   * Resets the settings to initial default
 
+* `-d, --dryrun`
+  * Tries to connect with the current or specified settings without fetching the news
+
 ### Option priority
 If multiple boolean options are set the precedence is as follows:
 

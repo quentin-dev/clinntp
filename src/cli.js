@@ -21,7 +21,7 @@ export async function cli (argsArray) {
   const args = minimist(argsArray.slice(2), {
     int: ['limit', 'port'],
     string: ['host', 'newsgroups'],
-    boolean: ['help', 'save', 'version', 'clear'],
+    boolean: ['help', 'save', 'version', 'clear', 'dryrun'],
     alias: {
       l: 'limit',
       h: 'host',
@@ -30,7 +30,8 @@ export async function cli (argsArray) {
       n: 'newsgroups',
       s: 'save',
       v: 'version',
-      c: 'clear'
+      c: 'clear',
+      d: 'dryrun'
     },
     default: {
       limit: currentConfig.limit,
@@ -40,7 +41,8 @@ export async function cli (argsArray) {
       newsgroups: currentConfig.newsgroups,
       save: false,
       version: false,
-      clear: false
+      clear: false,
+      dryrun: false
     },
     stopEarly: true,
     unknown: () => {
@@ -51,6 +53,10 @@ export async function cli (argsArray) {
 
   if (unknown) {
     return 1
+  }
+
+  if (args.dryrun) {
+    console.log('Dry running current settings...')
   }
 
   if (args.version) {
@@ -73,9 +79,14 @@ export async function cli (argsArray) {
     port: args.port
   })
 
-  await client.connect().catch(exception => console.log(exception))
+  await client.connect().catch(exception => {
+    console.log(exception)
+    return 1
+  })
 
-  await news(client, args.limit, args.newsgroups)
+  if (!args.dryrun) {
+    await news(client, args.limit, args.newsgroups)
+  }
 
   await client.quit()
 
